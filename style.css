@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Bodoni Moda", serif;
+  font-size: 1.2rem;
+  border: 2px solid rgb(255, 255, 255);
+  padding: 1px;
+  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+  
+}
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, rgb(251, 0, 113), rgb(42, 9, 255));
+}
+.left-text {
+  flex-basis: 30%;
+}
+
+.heading {
+  font-size: 3rem;
+  color: rgb(255, 255, 255);
+  align-items: center;
+}
+.sub-heading {
+  margin-top: 20px;
+  color: aliceblue;
+  align-items: center;
+}
+.gallery {
+  flex-basis: 50%;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 120px;
+}
+.box {
+  background-size: cover;
+  background-position: top;
+  color: white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: sans-serif;
+  padding: 50px;
+  text-shadow: 1px 1px 2px black;
+  background-color: #222;
+  background-blend-mode: hard-light;
+  transition: all 1s ease-in-out;
+}
+.box:hover{
+    background-color: #999;
+    background-position: center;
+    box-shadow: 0 0 4px white;
+}
+
+
+.row-2{
+  grid-row: span 2;
+}
+.col-2{
+  grid-column: span 2;
+}
+/* or you can grid row span and col span respectively and assign their classess */
+@media screen and (max-width:1024px) {
+  .container{
+    flex-direction: column;
+    padding-block: 20px;
+  }
+  .gallery{
+    width: 100%;
+    padding-inline: 12px;
+    grid-auto-rows: 220px;
+  }
+  .box{
+    grid-row: span 1;
+    grid-column: span 3;
+  }
+}
